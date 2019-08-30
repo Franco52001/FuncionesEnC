@@ -10,3 +10,18 @@
 1567171237 c:\users\alumno\desktop\clase\aritmetica.h
 	<stdio.h>
 
+1567174068 source:d:\oliveri\funcionesenc\bibliotecas\aritmetica.c
+	"Aritmetica.h"
+
+1567175647 d:\oliveri\funcionesenc\bibliotecas\aritmetica.h
+	<stdio.h>
+
+1567174068 source:d:\oliveri\funcionesenc\bibliotecas\untitled6.c
+	<stdio.h>
+	<stdlib.h>
+
+1567175467 source:d:\oliveri\funcionesenc\bibliotecas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Aritmetica.h"
+
