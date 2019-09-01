@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1567291549 source:c:\users\franco\desktop\programacion\codigo c\tp calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Aritmetica.h"
+
+1567291549 source:c:\users\franco\desktop\programacion\codigo c\tp calculadora\aritmetica.c
+	"Aritmetica.h"
+
+1567291549 c:\users\franco\desktop\programacion\codigo c\tp calculadora\aritmetica.h
+	<stdio.h>
+
