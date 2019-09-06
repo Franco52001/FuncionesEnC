@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1567781503 source:d:\oliveri\funcionesenc\cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
