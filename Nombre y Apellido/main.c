@@ -19,10 +19,10 @@ int main()
 
     largo = strlen(concatenar);
 
-    concatenar[0] -= 32;
+    concatenar[0] -= 32; // cualquier letra en la tabla ascii que le reste 32 termina en su mayuscula
     for(i = 0; i < largo; i++)
     {
-    if(concatenar[i] == 32)
+    if(concatenar[i] == 32) //32 en la tabla ascii es el espacio asi que cuando lo encuentra en (concatenar," ,") le va a restar 32 a la primera letra
         {
             i++;
             concatenar[i] -=32;
