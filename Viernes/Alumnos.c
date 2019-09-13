@@ -40,7 +40,7 @@ void ordenarAlumnosPorNombre(sAlumno lista[],int cant)
     int j;
     sAlumno auxAlumno;
 
-    for(i = 0 ; i < cant-1;i++)
+    for(i = 0 ; i < cant-1; i++)
     {
         for(j = i+1; j < cant; j++)
         {
@@ -54,11 +54,8 @@ void ordenarAlumnosPorNombre(sAlumno lista[],int cant)
                 lista[i] = lista[j];
                 lista[j] = auxAlumno;
             }
-
         }
-
     }
-
 }
 void harcoderAlumnos(sAlumno lista[],int cant)
 {
@@ -67,11 +64,11 @@ void harcoderAlumnos(sAlumno lista[],int cant)
     char nombre[][50] = {"Juan","Maria","Jose"};
     int i;
     for(i = 0; i < cant; i++)
-        {
-            lista[i].legajo = legajo[i];
-            lista[i].nota = nota[i];
-            strcpy(lista[i].nombre,nombre[i]);
-        }
+    {
+        lista[i].legajo = legajo[i];
+        lista[i].nota = nota[i];
+        strcpy(lista[i].nombre,nombre[i]);
+    }
 
 }
 /*int compararAlumnoPorLegajo(sAlumno unAlumno,sAlumno otroAlumno) funcion para comparar alumnos
