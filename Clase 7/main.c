@@ -4,19 +4,14 @@
 
 void cargarConDatos(int[], int);
 void cargarnombre(char[] [50], int);
-int darMaximo(int[],int);
-int elIndice(int[],int );
-void elNombre(char [],int [],int);
+
 int main()
 {
     int nota[TAM];
     char nombre[TAM] [50];
     int i;
-    int max;
-    int indice;
-    char alumnoMax[50];
 
-    /*for(i = 0; i < TAM; i++)
+    for(i = 0; i < TAM; i++)
     {
         printf("\nIngrese su nombre: ");
         gets(nombre[i]); //4 formas nombre--nombre[i]--nombre[i][50]--nombre[3][i]
@@ -26,8 +21,14 @@ int main()
 
         fflush(stdin);
     }
-    */
-    cargarConDatos(nota,TAM);
+
+    for(i = 0; i < TAM; i++)
+    {
+ printf("\nUsted es %s y saco %d\n",nombre[i],nota[i]); // no puse [i] en ningun y el nombre me tiraba solo el primero y de la nota solo la direccion de memoria    }
+    }
+}
+
+cargarConDatos(nota,TAM);
     cargarnombre(nombre,TAM);
     max = darMaximo(nota,TAM);
     indice = elIndice(indice,TAM);

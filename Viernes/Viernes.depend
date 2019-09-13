@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1568397406 source:d:\oliveri\funcionesenc\viernes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Alumnos.h"
+
+1568397379 source:d:\oliveri\funcionesenc\viernes\alumnos.c
+	"Alumnos.h"
+
+1568397068 d:\oliveri\funcionesenc\viernes\alumnos.h
+	<stdio.h>
+	<string.h>
+
