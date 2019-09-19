@@ -24,21 +24,21 @@ int main()
 
     for(i = 0; i < TAM; i++)
     {
- printf("\nUsted es %s y saco %d\n",nombre[i],nota[i]); // no puse [i] en ningun y el nombre me tiraba solo el primero y de la nota solo la direccion de memoria    }
+        printf("\nUsted es %s y saco %d\n",nombre[i],nota[i]); // no puse [i] en ningun y el nombre me tiraba solo el primero y de la nota solo la direccion de memoria    }
     }
 }
 
 cargarConDatos(nota,TAM);
-    cargarnombre(nombre,TAM);
-    max = darMaximo(nota,TAM);
-    indice = elIndice(indice,TAM);
-    strcpy(alumnoMax,nombre[indice]);
+cargarnombre(nombre,TAM);
+max = darMaximo(nota,TAM);
+indice = elIndice(indice,TAM);
+strcpy(alumnoMax,nombre[indice]);
 
-    for(i = 0; i < TAM; i++)
-    {
-        printf("\nSu nombre es %s y su edad es %d edad %d\n",nombre, indice,nota);
-    }
-    printf("%s",alumnoMax);
+for(i = 0; i < TAM; i++)
+{
+    printf("\nSu nombre es %s y su edad es %d edad %d\n",nombre, indice,nota);
+}
+printf("%s",alumnoMax);
 }
 void cargarConDatos(int array[], int cantidad)
 {

@@ -42,8 +42,8 @@ int main()
             break;
 
         }
-        system("pause");
-        system("cls");
+        system("pause");//pide una tecla para continuar el proseso lo "pausa"
+        system("cls");//limpia los datos ingresados en la pantalla
 
     }
     while(opcion!=5);

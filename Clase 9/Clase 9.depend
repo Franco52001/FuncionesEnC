@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1568905599 source:d:\oliveri\funcionesenc\clase 9\persona.c
+	"Persona.h"
+
+1568905599 d:\oliveri\funcionesenc\clase 9\persona.h
+	<stdio.h>
+
+1568905178 source:d:\oliveri\funcionesenc\clase 9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Persona.h"
+
