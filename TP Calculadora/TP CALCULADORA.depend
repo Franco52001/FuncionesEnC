@@ -10,3 +10,14 @@
 1567291549 c:\users\franco\desktop\programacion\codigo c\tp calculadora\aritmetica.h
 	<stdio.h>
 
+1567298155 source:c:\users\franco\desktop\programacion\github\funcionesenc\tp calculadora\aritmetica.c
+	"Aritmetica.h"
+
+1567363077 c:\users\franco\desktop\programacion\github\funcionesenc\tp calculadora\aritmetica.h
+	<stdio.h>
+
+1567298155 source:c:\users\franco\desktop\programacion\github\funcionesenc\tp calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Aritmetica.h"
+
