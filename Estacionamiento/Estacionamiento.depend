@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569509207 source:d:\oliveri\funcionesenc\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
