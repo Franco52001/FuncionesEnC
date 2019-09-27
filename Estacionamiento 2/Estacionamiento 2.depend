@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1569597549 source:d:\oliveri\funcionesenc\estacionamiento 2\funciones.c
+	"Funciones.h"
+
+1569597584 d:\oliveri\funcionesenc\estacionamiento 2\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1569597511 source:d:\oliveri\funcionesenc\estacionamiento 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+
