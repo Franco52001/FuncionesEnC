@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1570114647 source:d:\oliveri\funcionesenc\biblioteca\biblioteca.c
+	"biblioteca.h"
+
+1570114694 d:\oliveri\funcionesenc\biblioteca\biblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570114694 source:d:\oliveri\funcionesenc\biblioteca\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"biblioteca.h"
+

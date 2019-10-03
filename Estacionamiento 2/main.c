@@ -24,12 +24,15 @@ int main()
         switch(opcion)
         {
         case 1:
+            mostrarVehiculos(unVehiculo,unaPersona,V);
+            break;
+        case 2:
             printf("Duenios:\n");
             mostrarPersonas(unaPersona,P);
             id = buscarPorId(unVehiculo,unaPersona,P);
             mostrarAutosById(unVehiculo,unaPersona,id,V);
             break;
-        case 2:
+        case 3:
 
             break;
         }

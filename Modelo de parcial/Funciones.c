@@ -66,7 +66,7 @@ void mostrarVehiculos(sVehiculo listV[],sPersona listP[],int cant)
     int i;
     for(i = 0; i < cant ; i++)
     {
-        mostrarVehiculo(listV[i],listP,cant);
+        mostrarVehiculo(listV[i],listP[i],cant);
     }
 }
 
@@ -97,7 +97,7 @@ int buscarPorId(sVehiculo listV[],sPersona listP[],int cant)
     {
         if(id == listV[i].idDuenio)
         {
-            return id;
+            return i;//habia puesto return id y me mostraba basura
         }
     }
     return -1;
@@ -113,4 +113,35 @@ void mostrarAutosById(sVehiculo listV[],sPersona listP[],int id,int cant)
             mostrarVehiculo(listV[i],listP[i],cant);
         }
     }
+}
+
+int darBaja(sPersona listP[],sVehiculo listV[], int cant)
+{
+    int retorno = -1;
+    int id;
+    int index;
+    char respuesta;
+    if (listP != NULL && cant > 0)
+    {
+        mostrarPersonas(listP,cant);
+        index = buscarPorId(listV,listP,cant);
+        if(index != -1)
+        {
+            printf("Esta seguro que desea eliminar al siguiente usuario?: ");
+            mostrarPersona(listP[index]);
+            respuesta = getche();
+            if(respuesta == 's' || respuesta == 'S')
+            {
+                retorno = 0;
+            }
+            else
+            {
+                retorno = 1;
+            }
+
+        }
+    }
+
+    return retorno;
+
 }
