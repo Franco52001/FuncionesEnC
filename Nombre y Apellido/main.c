@@ -3,12 +3,20 @@
 
 int main()
 {
+<<<<<<< HEAD
     char apellido[15];//= "Oliveri";
     char nombre[15];// = "Franco";
+=======
+    char apellido[15] = {"Oliveri","PEPEPE"};
+    char nombre[15] = "Franco";
+>>>>>>> 31ebb9cec3d867455aa673e6a94b49c1e1fc9086
     char concatenar[35];
+    int i;
+    int largo;
 
     int i;
     printf("Ingrese su apellido\n");
+<<<<<<< HEAD
     gets(apellido);
     for(i = 0; i < 15; i++){
         if(apellido[i] == ' ' )
@@ -32,10 +40,28 @@ int main()
      }
 
 
+=======
+    //gets(apellido);
+    printf("\nIngrese su nombre\n");
+    //gets(nombre);
+>>>>>>> 31ebb9cec3d867455aa673e6a94b49c1e1fc9086
     strcat(concatenar,apellido);
     strcat(concatenar,", ");
     strcat(concatenar,nombre);
-    printf("\n%s",concatenar);
+
+    largo = strlen(concatenar);
+
+    concatenar[0] -= 32; // cualquier letra en la tabla ascii que le reste 32 termina en su mayuscula
+    for(i = 0; i < largo; i++)
+    {
+    if(concatenar[i] == 32) //32 en la tabla ascii es el espacio asi que cuando lo encuentra en (concatenar," ,") le va a restar 32 a la primera letra
+        {
+            i++;
+            concatenar[i] -=32;
+            break;
+        }
+    }
+printf("\n%s",concatenar);
 
 
 }

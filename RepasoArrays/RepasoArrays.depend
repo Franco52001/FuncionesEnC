@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1567864559 source:c:\users\alumno\desktop\repasoarrays\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1568289688 source:d:\oliveri\funcionesenc\repasoarrays\main.c
+	<stdio.h>
+	<stdlib.h>
+
