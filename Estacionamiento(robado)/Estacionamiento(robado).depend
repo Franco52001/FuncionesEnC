@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1570104801 source:d:\oliveri\funcionesenc\estacionamiento(robado)\biblioteca.c
+	"biblioteca.h"
+
+1570104778 d:\oliveri\funcionesenc\estacionamiento(robado)\biblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570104778 source:d:\oliveri\funcionesenc\estacionamiento(robado)\main.c
+	"biblioteca.h"
+

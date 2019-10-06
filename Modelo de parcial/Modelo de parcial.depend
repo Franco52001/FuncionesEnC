@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1570110413 source:d:\oliveri\funcionesenc\modelo de parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+
+1570108848 d:\oliveri\funcionesenc\modelo de parcial\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570110509 source:d:\oliveri\funcionesenc\modelo de parcial\funciones.c
+	"Funciones.h"
+
