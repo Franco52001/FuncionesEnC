@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1570676812 source:c:\users\franco\desktop\programacion\github\funcionesenc\estacionamiento 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+
+1570675636 c:\users\franco\desktop\programacion\github\funcionesenc\estacionamiento 2\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570677284 source:c:\users\franco\desktop\programacion\github\funcionesenc\estacionamiento 2\funciones.c
+	"Funciones.h"
+
