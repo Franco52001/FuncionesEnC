@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1570803255 source:d:\oliveri\funcionesenc\punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+
