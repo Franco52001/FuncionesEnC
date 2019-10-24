@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1571940295 source:d:\oliveri\puntero estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
