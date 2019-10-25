@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <conio.h>
-#define A 3
+#define A 1
 #define TRUE 1
 #define FALSE 0
 
@@ -14,13 +15,16 @@ typedef struct
 } sPersona;
 
 void inicializar(sPersona*,int);
-void pedirDatos(sPersona*,int cant,int contId);
+int pedirDatos(sPersona*,int cant,int contId);
 void mostrar(sPersona*, int cant);
 void ordenar(sPersona*,int cant);
 void swap(sPersona* a, sPersona* b);
 void incrementarId(int* ultimoId);
 int searchFree(sPersona* list,int length);
 int buscarProximoId(sPersona*,int);
+void toLowerCase(char* string);
+void firstLetterToUpperCase(char* letter);
+int onlyLetters(char* string);
 int main()
 {
     int contId = 0;
@@ -33,13 +37,20 @@ int main()
         printf("1.Cargar");
         printf("\n2.Mostrar\n");
         printf("3.Ordenar\n");
+        printf("4.Salir\n");
         printf("Elija una opcion\n");
         scanf("%d",&opcion);
         switch(opcion)
         {
         case 1:
-            pedirDatos(unaPersona,A,contId);
-            incrementarId(&contId);
+            if(pedirDatos(unaPersona,A,contId) == 1)
+            {
+                incrementarId(&contId);
+            }
+            else
+            {
+                printf("\nNo hay mas espacio\n");
+            }
             break;
         case 2:
             mostrar(unaPersona,A);
@@ -55,7 +66,7 @@ int main()
         system("cls");
 
     }
-    while(opcion!=15);
+    while(opcion!=4);
 
 
     return 0;
@@ -90,31 +101,41 @@ int buscarProximoId(sPersona* array,int cant)
     for(i = 0; i < cant; i++)
     {
         if((array + i)->id == -1 )
-            {
-                id = (array + i)->id;
-            }
-            return id +i;
+        {
+            id = (array + i)->id;
+        }
     }
+    return id +i;
 }
 
 
-void pedirDatos(sPersona* unDato,int cant,int contId)
+int pedirDatos(sPersona* unDato,int cant,int contId)
 {
     int i;
     int r = -1;
 
     i = searchFree(unDato,cant);
     if(i != -1)
+    {
+        printf("\nIngrese orden: ");
+        scanf("%d", &(unDato+i)->orden);
+        printf("\nIngrese apellido: ");
+        fflush(stdin);
+        gets((unDato+i)->apellido);
+        toLowerCase((unDato+i)->apellido);
+        firstLetterToUpperCase((unDato+i)->apellido);
+        while(onlyLetters((unDato+i)->apellido) == -1)
         {
-    printf("\nIngrese orden: ");
-    scanf("%d", &(unDato+i)->orden);
-    printf("\nIngrese apellido: ");
-    fflush(stdin);
-    gets((unDato+i)->apellido);
-    (unDato + i) -> id = contId;
-    printf("\n");
-    unDato[i].isEmpty = 1;
+            printf("Ingrese apellido nuevamente: ");
+            fflush(stdin);
+            gets((unDato+i)->apellido);
         }
+        (unDato + i) -> id = contId;
+        printf("\n");
+        unDato[i].isEmpty = 1;
+        r = 1;
+    }
+    return r;
 }
 
 void mostrar(sPersona* unDato, int cant)
@@ -158,4 +179,41 @@ void incrementarId(int* ultimoId)
 {
     *ultimoId = *ultimoId +1;
 
+}
+
+void toLowerCase(char* string)
+{
+    int length;
+    int i;
+    length = strlen(string);
+    for(i = 1; i < length; i++)
+    {
+        if(string[i] > 64 && string[i] < 91)
+        {
+            string[i] = string[i] + 32;
+        }
+    }
+}
+void firstLetterToUpperCase(char* letter)
+{
+    if(letter[0] > 96 && letter[0] < 123)
+    {
+        letter[0] = letter[0] -32;
+    }
+}
+
+int onlyLetters(char* string)
+{
+    int length;
+    int i;
+    int retorno = 1;
+    length = strlen(string);
+    for(i = 0; i < length; i++)
+    {
+        if((string[i] > 90 && string[i] < 97) || string[i] < 65 || string[i] > 123)
+        {
+            retorno = -1;
+        }
+    }
+    return retorno;
 }

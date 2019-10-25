@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1572017515 source:d:\oliveri\funcionesenc\archivos parte 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

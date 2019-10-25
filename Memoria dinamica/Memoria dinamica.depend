@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1446667744 source:d:\oliveri\funcionesenc\memoria dinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1572007715 source:d:\oliveri\funcionesenc\memoria dinamica\funciones.c
+	"Funciones.h"
+
+1572007715 d:\oliveri\funcionesenc\memoria dinamica\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
