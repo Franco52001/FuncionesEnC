@@ -4,55 +4,66 @@
 #include "biblioteca.h"
 #define TRUE 1
 #define FALSE 0
-#define SIZE 4
+#define SIZE 3
 //LLAMADOS
 int main()
 {
     sBiblioteca variable[SIZE];
     int opcion;
     int retorno;
+    int baja;
     int modificacion;
-    if(inicializar(variable,SIZE) == 0)
-    {
+
         do
         {
-            printf("1.Cargar");
+            printf("\n1.Cargar");
             printf("\n2.Mostrar\n");
             printf("3.Ordenar\n");
-            printf("4.Buscar\n");
-            printf("5.Dar de baja\n");
-            printf("6.Modificar datos\n");
+            printf("4.Dar de baja\n");
+            printf("5.Modificar datos\n");
+            printf("6.\n");
             printf("7.Salir\n");
             printf("Elija una opcion\n");
             scanf("%d",&opcion);
             switch(opcion)
             {
             case 1:
-                //if( == 1)
-
-                harcodear(variable,SIZE);
-                printf("Dato cargado con exito\n");
-
-                //else
-
-                //printf("No hay lugar\n");
-
+                //retorno = agregarTodos(variable,SIZE);
+                retorno = harcodear(variable,SIZE);
+                if(retorno == 1)
+                {
+                    printf("Cargado con exito\n");
+                }
+                else
+                {
+                    printf("No hay espacio disponible\n");
+                }
                 break;
             case 2:
-                mostrarTodos(variable,SIZE);
+                //retorno = agregarTodos(variable,SIZE);
+                retorno = harcodear(variable,SIZE);
+                if(retorno == 1)
+                {
+                    mostrarTodos(variable,SIZE);
+                }
+                else
+                {
+                    printf("\nNo se han ingresado datos\n");
+                }
                 break;
             case 3:
                 ordenarPorNombre(variable,SIZE);
                 mostrarTodos(variable,SIZE);
                 break;
             /*case 4:
-                index = buscarAlumnoPorLegajo(variable,SIZE,100);
+                index = buscarPorId(variable,SIZE,100);
 
                 mostrarUno(variable[index]);
-                break;*/
+                break;
+                */
             case 4:
-                retorno = darBaja(variable,SIZE);
-                switch(retorno)
+                baja = darBaja(variable,SIZE);
+                switch(baja)
                 {
                 case 0:
                     printf("\nDatos eliminado\n");
@@ -91,8 +102,8 @@ int main()
                     break;
 
             }
-            system("pause");//pide una tecla para continuar el proseso lo "pausa"
-            system("cls");//limpia los datos ingresados en la pantalla
+            //system("pause");//pide una tecla para continuar el proseso lo "pausa"
+            //system("cls");//limpia los datos ingresados en la pantalla
 
         }
         while(opcion!=15);

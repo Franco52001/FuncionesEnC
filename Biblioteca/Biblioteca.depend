@@ -13,3 +13,17 @@
 	<string.h>
 	"biblioteca.h"
 
+1570384753 source:c:\users\franco\desktop\programacion\github\funcionesenc\biblioteca\biblioteca.c
+	"biblioteca.h"
+
+1570384692 c:\users\franco\desktop\programacion\github\funcionesenc\biblioteca\biblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570384692 source:c:\users\franco\desktop\programacion\github\funcionesenc\biblioteca\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"biblioteca.h"
+

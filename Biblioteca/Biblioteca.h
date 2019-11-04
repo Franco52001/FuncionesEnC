@@ -15,6 +15,7 @@ typedef struct
 {
     int numeros;
     char nombre[50];
+    char apellido[51];
     sFecha fechas;
     int id;
     int estado;
@@ -22,13 +23,18 @@ typedef struct
 } sBiblioteca;
 
 int inicializar(sBiblioteca[],int);
-void harcodear(sBiblioteca lista[],int cant);
+int searchFree(sBiblioteca[],int length);
+int harcodear(sBiblioteca[],int cant);
+sBiblioteca agregarUno();
+int agregarTodos(sBiblioteca[],int cant);
 void mostrarUno(sBiblioteca variable);
-void mostrarTodos(sBiblioteca lista[],int cant);
+void mostrarTodos(sBiblioteca[],int cant);
 void ordenarPorNombre(sBiblioteca[],int);
 int buscarPorId(sBiblioteca[],int,int);
 int darBaja(sBiblioteca[],int);
 int modificar(sBiblioteca[],int);
-
+void toLowerCase(char[]);
+void firstLetterToUpperCase(char[]);
+int onlyLetters(char[]);
 
 
