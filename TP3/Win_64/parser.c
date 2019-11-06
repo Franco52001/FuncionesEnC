@@ -24,10 +24,8 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
     char horasTrabajadas[50];
     char sueldo[50];
     int i = 0;
-    Employee lista[150];
-    Employee unEmpleado;
+    Employee* lista;
 
-    pFile = fopen("data.csv","r");
     if(pFile == NULL)
         {
             return -1;
@@ -35,26 +33,16 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
     fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);
     do
     {
+        lista = employee_new(); //me faltaba esto y no copibala
         fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);
-        unEmpleado.id = atoi(id);
-        strcpy(unEmpleado.nombre,nombre);
-        unEmpleado.horasTrabajadas = atoi(horasTrabajadas);
-        unEmpleado.sueldo = atof(sueldo);
-        lista[i] = unEmpleado;
+        employee_setId(lista,atoi(id));
+        employee_setNombre(lista,nombre);
+        employee_setHorasTrabajadas(lista,atoi(horasTrabajadas));
+        employee_setSueldo(lista,atoi(sueldo));
         i++;
-        printf("%s--%s--%s--%s",id
-               ,nombre,
-               horasTrabajadas,
-               sueldo);
+        ll_add(pArrayListEmployee,lista);
     }while(!feof(pFile));
-    for(i = 0; i < 50;i++)
-        {
-            printf("%d--%s--%d--%d",
-                   lista[i].id,
-                   lista[i].nombre,
-                   lista[i].horasTrabajadas,
-                   lista[i].sueldo);
-        }
+
     return 1;
 }
 

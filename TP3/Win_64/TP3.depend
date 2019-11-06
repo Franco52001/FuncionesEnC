@@ -114,3 +114,35 @@
 
 1572833392 c:\users\franco\desktop\programacion\github\funcionesenc\tp3\win_64\controller.h
 
+1573029734 source:c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1573029734 c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\linkedlist.h
+
+1573029734 c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\employee.h
+	<string.h>
+	<stdlib.h>
+
+1573029734 source:c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\employee.c
+	"Employee.h"
+
+1573041606 source:c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1573029734 c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\controller.h
+
+1573047678 source:c:\users\alumno\desktop\funcionesenc-master\tp3\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+

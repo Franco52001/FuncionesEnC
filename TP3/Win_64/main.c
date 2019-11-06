@@ -37,11 +37,14 @@ int main()
     for(i = 0;i < ll_len(listaEmpleados); i++)
         {
             auxEmpleado = (Employee*)ll_get(listaEmpleados,i);
-            printf("%d -- %s -- %d -- %d\n",employee_getId(auxEmpleado,punteroInt),employee_getNombre(auxEmpleado,punteroChar),employee_getHorasTrabajadas(auxEmpleado,punteroInt),employee_getSueldo(auxEmpleado,punteroInt));
+            printf("%d -- %s -- %d -- %d\n",employee_getId(auxEmpleado,punteroInt),
+                   employee_getNombre(auxEmpleado,punteroChar),
+                   employee_getHorasTrabajadas(auxEmpleado,punteroInt),
+                   employee_getSueldo(auxEmpleado,punteroInt));
         }
 
 
-
+     fclose(pFile);
     /*
     int option = 0;
     do{
