@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1571932662 source:d:\oliveri\jueves 24\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1571932769 source:d:\oliveri\jueves 24\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1571940295 source:d:\oliveri\puntero estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1572004682 source:d:\oliveri\funcionesenc\puntero estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
