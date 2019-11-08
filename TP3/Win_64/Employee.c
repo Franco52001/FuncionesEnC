@@ -107,7 +107,7 @@ int findEmployeeById(Employee* lista,LinkedList* pArrayListEmployee)
     {
         for(i = 0; i < ll_len(pArrayListEmployee); i++)
         {
-            ll_get(pArrayListEmployee,i);
+            lista = ll_get(pArrayListEmployee,i);
 
             if(employee_getId(lista,&id) == id)
             {
