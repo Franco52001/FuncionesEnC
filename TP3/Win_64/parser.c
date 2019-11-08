@@ -23,7 +23,6 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
     char nombre[128];
     char horasTrabajadas[50];
     char sueldo[50];
-    int i = 0;
     Employee* lista;
 
     if(pFile == NULL)
@@ -31,17 +30,19 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
             return -1;
         }
     fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);
-    do
-    {
+
+    while(!feof(pFile)){
         lista = employee_new(); //me faltaba esto y no copibala
         fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);
         employee_setId(lista,atoi(id));
         employee_setNombre(lista,nombre);
         employee_setHorasTrabajadas(lista,atoi(horasTrabajadas));
         employee_setSueldo(lista,atoi(sueldo));
-        i++;
+
         ll_add(pArrayListEmployee,lista);
-    }while(!feof(pFile));
+    }
+
+    fclose(pFile);
 
     return 1;
 }

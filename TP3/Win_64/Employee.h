@@ -10,11 +10,13 @@ typedef struct
     char nombre[128];
     int horasTrabajadas;
     int sueldo;
-}Employee;
+} Employee;
 
 Employee* employee_new();
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr);
 void employee_delete();
+int showEmployee(LinkedList* pArrayListEmployee);
+int showOneEmployee();
 
 int employee_setId(Employee* this,int id);
 int employee_getId(Employee* this,int* id);

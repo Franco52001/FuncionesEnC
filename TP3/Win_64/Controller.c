@@ -45,28 +45,31 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
+
     Employee* empleado;
-    int i;
-    int contId;
-    int id;
+    Employee* auxEmpleado;
+    int id = 0;
     int horas;
     int sueldo;
     char nombre[51];
-    empleado = employee_new();
+    int length;
 
-    printf("\nIngrese Id: ");
-    scanf("%d",&id);
-    employee_setId(empleado,id);
+    length = ll_len(pArrayListEmployee);
+    empleado = employee_new();
+    auxEmpleado = (Employee*)ll_get(pArrayListEmployee,length - 1);
+
+    id = employee_getId(auxEmpleado,&id);
+    employee_setId(empleado,id + 1);
     printf("Ingrese nombre: ");
     fflush(stdin);
     gets(nombre);
     employee_setNombre(empleado,nombre);
     printf("Ingrese horas trabajadas: ");
     scanf("%d",&horas);
-    employee_setHorasTrabajadas(empleado,horas);
+    employee_setHorasTrabajadas(empleado,&horas);
     printf("Ingrese sueldo: ");
     scanf("%d",&sueldo);
-    employee_setSueldo(empleado,sueldo);
+    employee_setSueldo(empleado,&sueldo);
 
     ll_add(pArrayListEmployee,empleado);
     return 1;
@@ -86,17 +89,17 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     int mod;
     int retorno = -1;
     int length;
-    int id;
     int horas;
     int sueldo;
     char nombre[51];
     length = ll_len(pArrayListEmployee);
     if(pArrayListEmployee != NULL && length > 0)
     {
-        controller_ListEmployee(pArrayListEmployee);
+        showEmployee(pArrayListEmployee);
         index = findEmployeeById(empleado,pArrayListEmployee);
         if(index != -1)
         {
+            empleado = (Employee*)ll_get(pArrayListEmployee,index);
             while(mod !=4)
             {
                 printf("\nQue desea modificar?\n1.Nombre\n2.Horas Trabajadas\n3.Salario\n4.Terminar ");
@@ -108,22 +111,18 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                     fflush(stdin);
                     gets(nombre);
                     employee_setNombre(empleado,nombre);
-                    retorno = 0;
                     break;
                 case 2:
                     printf("\nIngrese nuevas horas trabajadas: ");
                     scanf("%d",&horas);
                     employee_setHorasTrabajadas(empleado,horas);
-                    retorno = 0;
                     break;
                 case 3:
                     printf("\nIngrese nuevo salario: ");
                     scanf("%d",&sueldo);
                     employee_setSueldo(empleado,sueldo);
-                    retorno = 0;
                     break;
                 case 4:
-                    retorno = 1;
                     break;
                 default:
                     printf("Opcion no valida\n");
@@ -132,10 +131,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             }
         }
     }
+    else
+    {
+        printf("No existe una lista\n");
+    }
     return retorno;
 }
-
-
 /** \brief Baja de empleado
  *
  * \param path char*
@@ -153,7 +154,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     length = ll_len(pArrayListEmployee);
     if(pArrayListEmployee != NULL && length > 0)
     {
-        controller_ListEmployee(pArrayListEmployee);
+        showEmployee(pArrayListEmployee);
         index = findEmployeeById(empleado,pArrayListEmployee);
         if(index != -1)
         {
@@ -163,11 +164,13 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
             if(remove == 1)
             {
                 ll_remove(pArrayListEmployee,index);
-                retorno = 0;
+                printf("\nDatos eliminados\n");
+                showEmployee(pArrayListEmployee);
             }
             else if(remove == 2)
             {
-                retorno = 1;
+                printf("\nAccion cancelada\n");
+                showEmployee(pArrayListEmployee);
             }
             else
             {
@@ -175,9 +178,16 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
                 scanf("%d",&remove);
             }
         }
+        else
+        {
+            printf("\nDatos no encontardos\n");
+        }
+    }
+    else
+    {
+        printf("No existe una lista\n");
     }
     return retorno;
-    return 1;
 }
 
 /** \brief Listar empleados
@@ -189,20 +199,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
-    Employee* auxEmpleado;
-    int* punteroInt;
-    char* punteroChar[51];
-    int i;
-    for(i = 0; i < ll_len(pArrayListEmployee); i++)
-    {
-        auxEmpleado = (Employee*)ll_get(pArrayListEmployee,i);
-        printf("%d -- %s -- %d -- %d\n",
-               employee_getId(auxEmpleado,punteroInt),
-               employee_getNombre(auxEmpleado,punteroChar),
-               employee_getHorasTrabajadas(auxEmpleado,punteroInt),
-               employee_getSueldo(auxEmpleado,punteroInt));
-    }
-    return 1;
+    showEmployee(pArrayListEmployee);
 }
 
 /** \brief Ordenar empleados
@@ -214,7 +211,86 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-
+    Employee* empleado;
+    int order;
+    int sort;
+    int length;
+    length = ll_len(pArrayListEmployee);
+    if(pArrayListEmployee != NULL && length > 0)
+    {
+        showEmployee(pArrayListEmployee);
+        while(order !=3)
+        {
+            printf("\nComo desear ordenar?\n1.Ascendente\n2.Descendente\n3.Terminar\n");
+            scanf("%d",&order);
+            switch(order)
+            {
+            case 1:
+                while(sort !=4)
+                {
+                    printf("\nPor que desear ordenar?\n1.Por Nombre\n2.Por Horas Trabajadas\n3.Por Sueldo\n4.Terminar\n");
+                    scanf("%d",&sort);
+                    switch(sort)
+                    {
+                    case 1:
+                        ll_sort(pArrayListEmployee,compararNombre,1);
+                        showEmployee(pArrayListEmployee);
+                        break;
+                    case 2:
+                        ll_sort(pArrayListEmployee,compararHorasA,1);
+                        showEmployee(pArrayListEmployee);
+                        break;
+                    case 3:
+                        ll_sort(pArrayListEmployee,compararSueldoA,1);
+                        showEmployee(pArrayListEmployee);
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        printf("Opcion no valida\n");
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                while(sort !=4)
+                {
+                    printf("\nPor que desear ordenar?\n1.Por Nombre\n2.Por Horas Trabajadas\n3.Por Sueldo\n4.Terminar\n");
+                    scanf("%d",&sort);
+                    switch(sort)
+                    {
+                    case 1:
+                        ll_sort(pArrayListEmployee,compararNombre,0);
+                        showEmployee(pArrayListEmployee);
+                        break;
+                    case 2:
+                        ll_sort(pArrayListEmployee,compararHorasD,1);
+                        showEmployee(pArrayListEmployee);
+                        break;
+                    case 3:
+                        ll_sort(pArrayListEmployee,compararSueldoD,1);
+                        showEmployee(pArrayListEmployee);
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        printf("Opcion no valida\n");
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                break;
+            default:
+                printf("Opcion no valida\n");
+                break;
+            }
+        }
+    }
+    else
+    {
+        printf("No existe una lista\n");
+    }
     return 1;
 }
 
@@ -227,6 +303,26 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 {
+    FILE* pFile;
+    int i;
+    int id;
+    char nombre;
+    int horas;
+    int sueldo;
+    Employee* lista;
+    pFile = fopen(path,"w");
+    for(i = 0; i < ll_len(pArrayListEmployee); i++)
+    {
+        lista = (Employee*)ll_get(pArrayListEmployee,i);
+        employee_getId(lista,&id);
+        employee_getNombre(lista,nombre);
+        employee_getHorasTrabajadas(lista,&horas);
+        employee_getSueldo(lista,&sueldo);
+
+        fprintf(pFile,"%d -- %s -- %d -- %d\n",id,nombre,horas,sueldo);
+
+    }
+    fclose(pFile);
     return 1;
 }
 

@@ -63,6 +63,7 @@ int main()
             break;
         case 8:
             controller_saveAsText("data.csv",listaEmpleados);
+            printf("Guardado con exito");
             break;
         case 9:
             controller_saveAsBinary("data.csv",listaEmpleados);
