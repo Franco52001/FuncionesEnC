@@ -40,3 +40,44 @@
 	"LinkedList.h"
 	"Employee.h"
 
+1574434617 source:c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1574434617 c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\linkedlist.h
+
+1574434617 c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\employee.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	"LinkedList.h"
+
+1574434617 source:c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\employee.c
+	"Employee.h"
+
+1574434617 source:c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574434617 source:c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1574434617 c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\controller.h
+
+1574427387 source:c:\users\alumno\desktop\funcionesenc-master\tp3 y tp4\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+

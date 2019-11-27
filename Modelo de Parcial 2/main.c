@@ -8,6 +8,7 @@ int main()
 {
     LinkedList* listaLlamadas = ll_newLinkedList();
     int option;
+    int retorno;
     do
     {
         printf("Menu:\n"
@@ -19,13 +20,17 @@ int main()
         switch(option)
         {
         case 1:
-            controller_loadFromText("data.csv",listaLlamadas);
+            retorno = controller_loadFromText("datos.csv",listaLlamadas);
+            if(retorno != 1)
+            {
+                printf("Cargado con exito\n");
+            }
             break;
         case 2:
-
+            controller_List(listaLlamadas);
             break;
         case 3:
-
+            controller_filterCall(listaLlamadas);
             break;
         case 4:
             break;

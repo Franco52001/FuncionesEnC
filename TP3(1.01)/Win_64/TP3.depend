@@ -188,3 +188,19 @@
 
 1573235286 d:\oliveri\funcionesenc\tp3\win_64\controller.h
 
+1574427086 source:c:\users\alumno\desktop\funcionesenc-master\tp3(1.01)\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1574434618 c:\users\alumno\desktop\funcionesenc-master\tp3(1.01)\win_64\linkedlist.h
+
+1574434618 c:\users\alumno\desktop\funcionesenc-master\tp3(1.01)\win_64\employee.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	"LinkedList.h"
+

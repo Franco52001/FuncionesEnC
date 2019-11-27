@@ -580,5 +580,23 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
     return returnAux;
 
 }
-
-
+//creo un nuevo linked list, con un for le agrego a un aux todos los elementos del linked list original, y si la funcion filtro me devuelve uno le agrego los elementos del aux al nuevo linked list para asi devolverlo
+LinkedList* ll_filter(LinkedList* this, int(*fn)(void* pElement))
+{
+    LinkedList* filterArray = NULL;
+    int i;
+    void* aux;
+    if(this != NULL && fn != NULL)
+    {
+        filterArray = ll_newLinkedList();
+        for(i = 0; i < ll_len(this); i++)
+        {
+            aux = ll_get(this,i);
+            if(fn(aux) > 0)
+            {
+                ll_add(filterArray,aux); // aca estaba el returnaux
+            }
+        }
+    }
+    return filterArray;// aca estaba devolviendo un returnaux y eso no me mostraba la lista filtrada
+}

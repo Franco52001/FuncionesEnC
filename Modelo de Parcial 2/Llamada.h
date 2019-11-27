@@ -3,19 +3,14 @@
 #include <stdlib.h>
 #include <malloc.h>
 #include "LinkedList.h"
-typedef struct
-{
-    int dia;
-    int mes;
-    int anio;
-} Fecha;
 
 typedef struct
 {
     int id;
-    Fecha fecha;
+    char fecha[50];
     int clienteId;
     int problema;
+    char solucion[50];
 } Llamada;
 
 
@@ -34,4 +29,17 @@ void incrementarId(int* id);
 
 int employee_setProblema(Llamada* this,int problema);
 int employee_getProblema(Llamada* this,int* problema);
+int employee_getProblemaSimple(Llamada*);
+
+int employee_setFecha(Llamada* this,char* fecha);
+int employee_getFecha(Llamada* this,char* fecha);
+
+int employee_setSolucion(Llamada* this,char* solucion);
+int employee_getSolucion(Llamada* this,char* solucion);
+
+int filter1(void* p1);
+int filter2(void* p1);
+int filter3(void* p1);
+int filter4(void* p1);
+int filter5(void* p1);
 

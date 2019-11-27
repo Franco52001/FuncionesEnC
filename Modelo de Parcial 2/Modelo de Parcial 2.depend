@@ -1,38 +1,38 @@
 # depslib dependency file v1.0
-1574344719 source:c:\users\alumno\desktop\modelo de parcial 2\controller.c
+1574433801 source:c:\users\alumno\desktop\modelo de parcial 2\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Llamada.h"
 
-1574342811 c:\users\alumno\desktop\modelo de parcial 2\linkedlist.h
+1574434614 c:\users\alumno\desktop\modelo de parcial 2\linkedlist.h
 
-1574344906 c:\users\alumno\desktop\modelo de parcial 2\llamada.h
+1574433801 c:\users\alumno\desktop\modelo de parcial 2\llamada.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	<malloc.h>
 	"LinkedList.h"
 
-1574342811 source:c:\users\alumno\desktop\modelo de parcial 2\linkedlist.c
+1574433981 source:c:\users\alumno\desktop\modelo de parcial 2\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1574345173 source:c:\users\alumno\desktop\modelo de parcial 2\llamada.c
+1574433801 source:c:\users\alumno\desktop\modelo de parcial 2\llamada.c
 	"Llamada.h"
 
-1574345219 source:c:\users\alumno\desktop\modelo de parcial 2\main.c
+1574433022 source:c:\users\alumno\desktop\modelo de parcial 2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 	"Controller.h"
 
-1574344719 c:\users\alumno\desktop\modelo de parcial 2\controller.h
+1574428520 c:\users\alumno\desktop\modelo de parcial 2\controller.h
 
-1574345183 source:c:\users\alumno\desktop\modelo de parcial 2\parser.c
+1574427574 source:c:\users\alumno\desktop\modelo de parcial 2\parser.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

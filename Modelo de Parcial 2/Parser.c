@@ -20,25 +20,26 @@
 int parser_CallFromText(FILE* pFile, LinkedList* pArrayList)
 {
     char id[50];
-    char dia[128];
-    char mes[128];
-    char anio[128];
+    char fecha[50];
     char clienteId[50];
     char problema[50];
+    char solucion[50];
     Llamada* lista;
 
     if(pFile == NULL)
         {
             return -1;
         }
-    fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",id,dia,mes,anio,clienteId,problema);
+    fscanf(pFile,"%[^,],%[^,],%[^,],%[^,]%[^\n]\n",id,fecha,clienteId,problema,solucion);
 
     while(!feof(pFile)){
         lista = Llamada_new();
-        fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",id,dia,mes,anio,clienteId,problema);
+        fscanf(pFile,"%[^,],%[^,],%[^,],%[^,]%[^\n]\n",id,fecha,clienteId,problema,solucion);
         employee_setId(lista,atoi(id));
+        employee_setFecha(lista,fecha);
         employee_setClientId(lista,atoi(clienteId));
         employee_setProblema(lista,atoi(problema));
+        employee_setSolucion(lista,solucion);
 
         ll_add(pArrayList,lista);
     }

@@ -13,10 +13,13 @@
 int controller_loadFromText(char* path, LinkedList* pArrayList)
 {
     FILE* pFile;
+    int retorno;
     pFile = fopen(path,"r");
-    parser_CallFromText(pFile,pArrayList);
+    retorno = parser_CallFromText(pFile,pArrayList);
     fclose(pFile);
     return 1;
+
+
 }
 
 
@@ -63,85 +66,55 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayList)
 }
 
 
-
+*/
 int controller_List(LinkedList* pArrayList)
 {
     show(pArrayList);
     return 1;
 }
 
-
-
-int controller_sort(LinkedList* pArrayList)
+int controller_filterCall(LinkedList* pArrayList)
 {
     int order;
     int sort;
     int length;
     length = ll_len(pArrayList);
+    LinkedList* pArrayFilter;
     if(pArrayList != NULL && length > 0)
     {
-        showEmployee(pArrayList);
-        while(order !=3)
+        show(pArrayList);
+        while(order !=6)
         {
-            printf("\nComo desear ordenar?\n1.Ascendente\n2.Descendente\n3.Terminar\n");
+            printf("\Por que error desear filtrar?\n1.PC\n2.Mouse\n3.Teclado\n4.Internet\n5.Telefono\n6.Salir\n");
             scanf("%d",&order);
             switch(order)
             {
             case 1:
-                while(sort !=4)
-                {
-                    printf("\nPor que desear ordenar?\n1.Por Nombre\n2.Por Horas Trabajadas\n3.Por Sueldo\n4.Terminar\n");
-                    scanf("%d",&sort);
-                    switch(sort)
-                    {
-                    case 1:
-                        ll_sort(pArrayList,compararNombre,1);
-                        showEmployee(pArrayList);
-                        break;
-                    case 2:
-                        ll_sort(pArrayList,compararHorasA,1);
-                        showEmployee(pArrayList);
-                        break;
-                    case 3:
-                        ll_sort(pArrayList,compararSueldoA,1);
-                        showEmployee(pArrayList);
-                        break;
-                    case 4:
-                        break;
-                    default:
-                        printf("Opcion no valida\n");
-                        break;
-                    }
-                }
+                pArrayFilter = ll_filter(pArrayList,filter1);
+                show(pArrayFilter);
+                controller_saveAsText("ListaFiltrada1.csv",pArrayFilter);
                 break;
             case 2:
-                while(sort !=4)
-                {
-                    printf("\nPor que desear ordenar?\n1.Por Nombre\n2.Por Horas Trabajadas\n3.Por Sueldo\n4.Terminar\n");
-                    scanf("%d",&sort);
-                    switch(sort)
-                    {
-                    case 1:
-                        ll_sort(pArrayList,compararNombre,0);
-                        showEmployee(pArrayList);
-                        break;
-                    case 2:
-                        ll_sort(pArrayList,compararHorasD,1);
-                        showEmployee(pArrayList);
-                        break;
-                    case 3:
-                        ll_sort(pArrayList,compararSueldoD,1);
-                        showEmployee(pArrayList);
-                        break;
-                    case 4:
-                        break;
-                    default:
-                        printf("Opcion no valida\n");
-                        break;
-                    }
-                }
+                pArrayFilter = ll_filter(pArrayList,filter2);
+                show(pArrayFilter);
+                controller_saveAsText("ListaFiltrada2.csv",pArrayFilter);
                 break;
             case 3:
+                pArrayFilter = ll_filter(pArrayList,filter3);
+                show(pArrayFilter);
+                controller_saveAsText("ListaFiltrada3.csv",pArrayFilter);
+                break;
+            case 4:
+                pArrayFilter = ll_filter(pArrayList,filter4);
+                show(pArrayFilter);
+                controller_saveAsText("ListaFiltrada4.csv",pArrayFilter);
+                break;
+            case 5:
+                pArrayFilter = ll_filter(pArrayList,filter5);
+                show(pArrayFilter);
+                controller_saveAsText("ListaFiltrada5.csv",pArrayFilter);
+                break;
+            case 6:
                 break;
             default:
                 printf("Opcion no valida\n");
@@ -162,27 +135,29 @@ int controller_saveAsText(char* path, LinkedList* pArrayList)
     FILE* pFile;
     int i;
     int id;
-    char nombre;
-    int horas;
-    int sueldo;
-    Employee* lista;
+    char fecha[50];
+    int clienteId;
+    int problema;
+    char solucion[50];
+    Llamada* lista;
     pFile = fopen(path,"w");
     for(i = 0; i < ll_len(pArrayList); i++)
     {
-        lista = (Employee*)ll_get(pArrayList,i);
+        lista = (Llamada*)ll_get(pArrayList,i);
         employee_getId(lista,&id);
-        employee_getNombre(lista,&nombre);
-        employee_getHorasTrabajadas(lista,&horas);
-        employee_getSueldo(lista,&sueldo);
+        employee_getFecha(lista,&fecha);
+        employee_getClientId(lista,&clienteId);
+        employee_getProblema(lista,&problema);
+        employee_getSolucion(lista,&solucion);
 
-        fprintf(pFile,"%d -- %s -- %d -- %d\n",id,nombre,horas,sueldo);
+        fprintf(pFile,"%d -- %s -- %d -- %d -- &s\n",id,fecha,clienteId,problema,solucion);
 
     }
     fclose(pFile);
     return 1;
 }
 
-
+/*
 int controller_saveAsBinary(char* path, LinkedList* pArrayList)
 {
 
@@ -192,8 +167,8 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayList)
     pFile = fopen(path,"w");
     for(i = 0; i < ll_len(pArrayList); i++)
     {
-       lista = (Employee*)ll_get(pArrayList,i);
-       fwrite(lista,sizeof(Employee),1,pFile);
+        lista = (Employee*)ll_get(pArrayList,i);
+        fwrite(lista,sizeof(Employee),1,pFile);
 
     }
     fclose(pFile);
