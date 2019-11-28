@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1574945752 source:c:\users\alumno\desktop\parcial 2 vuelos\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Vuelo.h"
+	"parser.h"
+
+1574944518 c:\users\alumno\desktop\parcial 2 vuelos\linkedlist.h
+
+1574946971 c:\users\alumno\desktop\parcial 2 vuelos\vuelo.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	"LinkedList.h"
+
+1574944831 source:c:\users\alumno\desktop\parcial 2 vuelos\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1574945574 source:c:\users\alumno\desktop\parcial 2 vuelos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+
+1574944518 c:\users\alumno\desktop\parcial 2 vuelos\controller.h
+
+1574948470 source:c:\users\alumno\desktop\parcial 2 vuelos\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Vuelo.h"
+
+1574946892 source:c:\users\alumno\desktop\parcial 2 vuelos\vuelo.c
+	"Vuelo.h"
+
+1574945707 c:\users\alumno\desktop\parcial 2 vuelos\parser.h
+
